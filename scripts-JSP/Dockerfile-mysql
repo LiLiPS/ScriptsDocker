@@ -1,0 +1,9 @@
+FROM mysql:latest
+
+# autora del Dockerfile.
+LABEL maintainer="Liliana Parada Sanchez"
+
+ENV MYSQL_DATABASE="proyectoJSP"
+ENV MYSQL_ROOT_PASSWORD="root"
+
+COPY ./BaseDatos/proyectoJSP.sql /docker-entrypoint-initdb.d/proyectoJSP.sql

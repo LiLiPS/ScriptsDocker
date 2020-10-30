@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    db:
+        image: lilips/mysqlimagen
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: 'root'
+            MYSQL_DATABASE: 'proyectoJSP'
+        container_name: mysqljsp
+        ports: 
+            - "3306:3306"
+            
+    web:
+        image: lilips/tomcatimagen
+        restart: always
+        container_name: tomcatjsp
+        ports: 
+            - "8080:8080"
+
+    

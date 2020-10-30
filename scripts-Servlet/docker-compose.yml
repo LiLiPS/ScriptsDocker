@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    db:
+        image: lilips/mysqlservlet
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: 'root'
+            MYSQL_DATABASE: 'proyectoservlet'
+        container_name: mysqlservlet
+        ports: 
+            - "3306:3306"
+            
+    web:
+        image: lilips/tomcatservlet
+        restart: always
+        container_name: tomcatservlet
+        ports: 
+            - "8080:8080"
+
+    
